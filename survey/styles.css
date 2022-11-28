@@ -1,0 +1,63 @@
+#container {
+    margin:0 auto;
+    width:100%;
+    height: 100%;
+    background-color: rgba(100,100,100,0.5);
+    padding:2rem 0;
+}
+#title {
+    text-align: center;
+}
+#description {
+    text-align: center;
+    font-family: monospace;
+    font-size: larger;
+    font-weight: bolder;
+    padding-bottom: 1rem;
+}
+#form-container {
+    margin:0 auto;
+    width:20rem;
+    background-color: rgba(100,100,100,0.5);
+    padding: 2rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+fieldset {
+    border:none;
+    border-bottom:0.2rem solid #f2f2f5;
+    margin:0.5rem;
+    border-color: none;
+    padding:0.8rem;
+}
+label {
+    display: block;
+}
+textarea {
+    display:block;
+}
+input {
+    margin:0.5rem;
+    padding: 0.6em;
+    
+}
+#name,#email,#number {
+    display: block;
+}
+#dropdown {
+    margin:0.5rem auto;
+    padding: 0.5em;
+    width:15rem;
+}
+#btn-container {
+    width:100%;
+    margin:0 auto;
+    padding: auto;
+}
+#submit {
+    width:20rem;
+    height: 3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+    background-color: rgba(50, 50, 50, 0.6);
+    color:#f2f2f5;
+}

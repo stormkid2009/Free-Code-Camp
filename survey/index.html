@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="container">
+    <h1 id="title">Food Survey</h1>
+    <p id="description">what kind of food egyptians like more?</p>
+    <div id="form-container">
+    <form action="" id="survey-form">
+      <fieldset>
+        <label for="name" id="name-label"
+          >Name:
+          <input id="name" type="text" placeholder="your name please" required
+        /></label>
+        <label for="email" id="email-label"
+          >Email:
+          <input
+            id="email"
+            type="email"
+            placeholder="Enter valid e mail"
+            required
+        /></label>
+        <label for="number" id="number-label"
+          >Phone Number:
+          <input
+            id="number"
+            type="number"
+            min="1"
+            max="9"
+            placeholder="Enter valid number"
+            required
+        /></label>
+      </fieldset>
+      <fieldset>
+        <label for="food">Kind of food you prefer: </label>
+        <select name="food" id="dropdown">
+          <option value="">choose food</option>
+          <option value="pizza">Pizza</option>
+          <option value="pasta">Pasta</option>
+          <option value="molokhya">Molokhya</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <label>Home or Restaurants to have your meals?</label>
+        <label for="home-choice-label"
+          ><input
+            id="home-choice"
+            name="indoor-outdoor"
+            type="radio"
+            value="home"
+          />Home</label
+        >
+        <label for="restaurant-choice-label"
+          ><input
+            id="restaurant-choice"
+            name="indoor-outdoor"
+            type="radio"
+            value="restaurant"
+          />Restaurant</label
+        >
+      </fieldset>
+      <fieldset>
+        <label for="baazoka-res"
+          ><input
+            id="baazoka-res"
+            value="baazoka"
+            name="best-restaurant"
+            type="checkbox"
+          />Baazoka</label
+        >
+        <label for="kfc-res"
+          ><input
+            id="kfc-res"
+            value="kfc"
+            name="best-restaurant"
+            type="checkbox"
+          />KFC</label
+        >
+        <label for="om-hassan-res"
+          ><input
+            id="om-hassan-res"
+            value="om hassan"
+            name="best-restaurant"
+            type="checkbox"
+          />Om Hassan</label
+        >
+        <label for="meendy-res"
+          ><input
+            id="meendy-res"
+            value="meendy"
+            name="best-restaurant"
+            type="checkbox"
+          />Meendy</label
+        >
+      </fieldset>
+      <fieldset>
+        <label for="comment-label"
+          >Drop your comment down below
+          <textarea
+            name="comment"
+            id="comment"
+            cols="30"
+            rows="10"
+            placeholder="add your comment "
+          ></textarea>
+        </label>
+      </fieldset>
+      <div id="btn-container">
+        <button id="submit" type="submit">Submit</button>
+      </div>
+    </form>
+</div>
+</div>
+  </body>
+</html>

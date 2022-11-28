@@ -1,0 +1,55 @@
+body {
+    font-family: monospace;
+    font-size: large;
+    background-color: #c2c2f6;
+    padding:1rem;
+}
+#title,#description {
+    text-align: center;
+}
+#description {
+    font-size: larger;
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+}
+
+img {
+    display: block;
+    width: 80%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+#img-caption {
+    text-align: center;
+    padding-top: 0.8rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    font-weight: 900;
+}
+#headline {
+    text-align: center;
+    font-style: oblique;
+    background-color: aliceblue;
+    width:55%;
+    margin: 1.5rem auto;
+    padding:0.7rem;
+}
+#list-info {
+    font-size: large;
+    font-weight: bold;
+    font-style: normal;
+}
+#list-info>li {
+    padding: 0.5em;
+    margin-left: 0.5rem;
+}
+#tribute-link {
+    text-decoration: none;
+    color: azure;
+    background: #aaa;
+}
+#tribute-info {
+    width:70%;
+    margin:0.5rem auto;
+    padding:0.5rem;
+}
