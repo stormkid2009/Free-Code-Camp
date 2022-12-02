@@ -1,0 +1,40 @@
+.container {
+    width: 90%;
+    height: 90%;
+    margin:auto;
+    margin-top: 50px;
+    background-color: #028820;
+}
+.keys-container {
+    width:90%;
+    height: 90%;
+    display:flex;
+    justify-content: center;
+    margin:auto;
+    padding:1rem;
+    
+}
+.keys {
+    width:4rem;
+    height: 300px;
+    background-color: #fff;
+    position: relative;
+    display:flex;
+    
+}
+.key-white {
+    width:2.5rem;
+    height: 300px;
+    border:.5px solid black;
+    background-color: #fff;
+}
+.key-black {
+    width:1.5rem;
+    height:150px;
+    border:.5px solid black;
+    background-color: #000;
+    position:absolute;
+    top: 0;
+    left: 1.2rem;
+    z-index:3;
+}
