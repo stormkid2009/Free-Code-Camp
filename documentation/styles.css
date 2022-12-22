@@ -1,0 +1,33 @@
+
+
+.container {
+    width:100%;
+    height: 100vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: left;
+    padding:2rem;
+}
+.nav-container {
+    width:35%;
+    height: 100%;
+    padding:1rem;
+    
+
+}
+.content-container {
+    width:65%;
+    height:100%;
+    padding:1rem;
+    
+}
+
+@media (max-width:420px) {
+    .container {
+        display:flex;
+        flex-direction: column;
+        overflow: hidden;
+        padding:2rem;
+    }
+}

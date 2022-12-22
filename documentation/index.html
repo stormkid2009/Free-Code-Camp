@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--
+        14-On regular sized devices (laptops, desktops), 
+        the element with id="navbar" should be shown on the left side of 
+        the screen and should always be visible to the user
+
+        15-Your technical documentation should use at least one media query
+    -->
+    <main id="main-doc">
+        <div class="container">
+        <div class="nav-container">
+            <nav id="navbar">
+                <header>
+                    <h2>Nextjs documentation</h2>
+                </header>
+                <ul>
+                    <li><a class="nav-link" id="Getting_Started" href="#Getting_Started"><span>Getting Started</span></a></li>
+                    <li><a class="nav-link" id="Basic_Features" href="#Basic_Features"><span>Basic Features</span> </a></li>
+                    <li><a class="nav-link" id="Advanced_Features" href="#Advanced_Features"> <span>Advanced Features</span> </a></li>
+                    <li><a class="nav-link" id="Next13_New_Features" href="#Next13_New_Features"><span>Next13 New Features</span> </a></li>
+                    <li><a class="nav-link" id="Fake_Topic" href="#Fake_Topic"><span>Fake Topic</span> </a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+        <div class="content-container">
+        <section class="main-section" id="Getting_Started">
+            <header>
+                <h1>Getting Started</h1>
+            </header>
+            <article>
+                <p>Welcome to the Next.js documentation!</p>
+                <p>
+                    If you're new to Next.js, we recommend starting with the <a href="https://nextjs.org/learn/basics/create-nextjs-app">learn course</a>. 
+                    The interactive course with quizzes will guide you through everything you need to know to use Next.js.
+                </p>
+                <h3>System Requirements:</h3>
+                <p>
+                    <ul>
+                        <li>Nodejs 14.6.0 or newer</li>
+                        <li>MacOS, Windows (including WSL), and Linux are supported</li>
+                        <li>Something should be here</li>
+                        <li>Something should be here</li>
+                        <li>Something should be here</li>
+                    </ul>
+                </p>
+                <h3>Automatic Setup</h3>
+                <p>
+                    We recommend creating a new Next.js app using create-next-app, which sets up everything automatically for you.
+                </p>
+                <p>
+                    <code>
+                        npx create-next-app@latest
+                        
+                        
+                    </code><br>
+                    # or <br>
+                    <code>
+                        yarn create next-app
+                    </code>
+                </p>
+                <p>If you want to start with a TypeScript project you can use the --typescript flag:</p>
+
+                <p>
+                    <code>
+                        npx create-next-app@latest --typescript
+                    </code><br>
+                    # or <br>
+                    <code>
+                        yarn create next-app --typescript
+                    </code>
+                </p>
+                <p>After the installation:</p>
+                <p>
+                    <code>
+                        npm run dev
+                    </code><br>
+                    # or
+                    <code>
+                        yarn dev
+                    </code>
+                </p>
+                <p>
+                    For more information on how to use create-next-app, 
+                    you can review the <a href="https://nextjs.org/docs/api-reference/create-next-app">
+                    create-next-app documentation.</a>
+                </p>
+            </article>
+        </section>
+        <section class="main-section" id="Basic_Features">
+            <header><h1>Basic Features</h1></header>
+            <article>
+                <h3>Page</h3>
+                <p>
+                    In Next.js, a <strong>page</strong> is a <i>React Component</i> exported from a .js, .jsx, .ts, or .tsx file in the pages directory. 
+                    Each page is associated with a route based on its file name.
+                </p>
+                <p>
+                    Example: If you create pages/about.js that exports a React component like below, it will be accessible at /about.
+                </p>
+                <p>
+                    <pre>
+                        <code>
+                            export default function About() {
+                                return (<div> About </div>)
+                            }      
+                        </code>
+                    </pre>
+                </p>
+                <p>
+                    Next.js supports pages with dynamic routes. <br>
+                    For example, if you create a file called pages/posts/[id].js, then it will be accessible at posts/1, posts/2, etc.
+                </p>
+                <h3>Pre-rendering</h3>
+                <p>
+                    By default, Next.js pre-renders every page. 
+                    This means that Next.js generates HTML for each page in advance, instead of having it all done by client-side JavaScript. Pre-rendering can result in better performance and SEO.
+                </p>
+                <p>
+                    Each generated HTML is associated with minimal JavaScript code necessary for that page. 
+                    When a page is loaded by the browser, its JavaScript code runs and makes the page fully interactive. (This process is called hydration.)
+                </p>
+                <h4>Kinds of pre-rendering in nextjs</h4>
+                <p>
+                    <ul>
+                        <li><strong><i>Stateic Generation Rendering</i></strong></li>
+                        <li><strong><i>Server Side Rendering</i></strong></li>
+                        <li>Something should be here</li>
+                        <li>Something should be here</li>
+                        <li>Something should be here</li>
+                    </ul>
+                </p>
+                <p>
+                    If a page uses Static Generation, the page HTML is generated at build time. That means in production, the page HTML is generated when you run next build . This HTML will then be reused on each request. It can be cached by a CDN.
+
+                </p>
+                <p>
+                    <pre><code>
+                        function About(){
+                            return(
+                                <div>About</div>
+                            )
+                        }
+                        export default About;
+                    </code></pre>
+                </p>
+                <p>
+                    If a page uses Server-side Rendering, the page HTML is generated on each request. <br>
+                    To use Server-side Rendering for a page, you need to export an async function called getServerSideProps. <br> 
+                    This function will be called by the server on every request.
+
+                </p>
+                <p>
+                    <pre><code>
+                        export default function Page({ data }) {
+                            // Render data...
+                          }
+                          
+                          // This gets called on every request
+                          export async function getServerSideProps() {
+                            // Fetch data from external API
+                            const res = await fetch(`https://.../data`)
+                            const data = await res.json()
+                          
+                            // Pass data to the page via props
+                            return { props: { data } }
+                          }
+                          
+                    </code></pre>
+                </p>
+                <h3>Adding Global  stylesheet</h3>
+                <p>
+                    To add a stylesheet to your application, import the CSS file within pages/_app.js.
+
+For example, consider the following stylesheet named styles.css:
+                </p>
+                <pre><code>
+                    body {
+                        font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
+                          'Arial', sans-serif;
+                        padding: 20px 20px 60px;
+                        max-width: 680px;
+                        margin: 0 auto;
+                      }
+                      
+                </code></pre>
+                <p>Then, import the styles.css file.</p>
+                <pre><code>
+                    import '../styles.css'
+
+                    // This default export is required in a new `pages/_app.js` file.
+                    export default function MyApp({ Component, pageProps }) {
+                      return <Component {...pageProps} />
+                    }
+
+                </code></pre>
+                <p>
+                    These styles (styles.css) will apply to all pages and components in your application. <br>
+                    Due to the global nature of stylesheets, and to avoid conflicts, you may only import them inside <code>pages/_app.js</code>.
+                </p>
+            </article>
+        </section>
+        <section class="main-section" id="Advanced_Features">
+            <header>
+                <h1>Advanced Features</h1>
+            </header>
+            <article>
+                <h3>Next.js Compiler</h3>
+                <p>
+                    The Next.js Compiler, written in Rust using <a href="https://swc.rs/">SWC</a> , allows Next.js to transform and minify your JavaScript code for production. 
+                    This replaces Babel for individual files and Terser for minifying output bundles.
+                </p>
+                <h3>why SWC?</h3>
+                <ul>
+                        <li>
+                            <h4>Extensibility:</h4>
+                            <p>SWC can be used as a Crate inside Next.js, without having to fork the library or workaround design constraints.</p>
+                        </li>
+                        <li>
+                            <h4>Performance:</h4>  
+                            <p>We were able to achieve ~3x faster Fast Refresh and ~5x faster builds in Next.js by switching to SWC, with more room for optimization still in progress.</p> 
+                        </li>
+                        <li>
+                            <h4>WebAssembly:</h4>  
+                            <p> Rust's support for WASM is essential for supporting all possible platforms and taking Next.js development everywhere.</p> 
+                        </li>
+                        <li>
+                            <h4>Community:</h4>    
+                            <p>The Rust community and ecosystem are amazing and still growing.</p>  
+                        </li>
+                        <li>
+                            Something should be here
+                        </li>
+                </ul>
+                <h3>Styled Components</h3>
+                <p>We're working to port <code>babel-plugin-styled-components</code> to the Next.js Compiler.</p>
+                <p>First, update to the latest version of Next.js: <code>npm install next@latest</code>. Then, update your <code>next.config.js</code> file:</p>
+                <p>
+                    <pre><code>
+                        module.exports = {
+                            compiler: {
+                              // see https://styled-components.com/docs/tooling#babel-plugin for more info on the options.
+                              styledComponents: boolean | {
+                                // Enabled by default in development, disabled in production to reduce file size,
+                                // setting this will override the default for all environments.
+                                displayName?: boolean,
+                                // Enabled by default.
+                                ssr?: boolean,
+                                // Enabled by default.
+                                fileName?: boolean,
+                                // Empty by default.
+                                topLevelImportPaths?: string[],
+                                // Defaults to ["index"].
+                                meaninglessFileNames?: string[],
+                                // Enabled by default.
+                                cssProp?: boolean,
+                                // Empty by default.
+                                namespace?: string,
+                                // Not supported yet.
+                                minify?: boolean,
+                                // Not supported yet.
+                                transpileTemplateLiterals?: boolean,
+                                // Not supported yet.
+                                pure?: boolean,
+                              },
+                            },
+                          }
+                    </code></pre>
+                </p>
+                <h3>Jest</h3>
+                <p>
+                    Jest support not only includes the transformation previously provided by Babel, but also simplifies configuring Jest together with Next.js including:
+                </p>
+                <ul>
+                    <li>Auto mocking of <code>.css</code> , <code>.module.css</code></li>
+                    <li>Automatically sets up <code>transform</code> using SWC</li>
+                    <li>Loading <code>.env</code> (and all variants) into <code>process.env</code></li>
+                    <li>Ignores <code>node_modules</code> from test resolving and transforms</li>
+                    <li>Ignoring <code>.next</code> from test resolving</li>
+                    <li>Loads <code>next.config.js</code> for flags that enable experimental SWC transform</li>
+                </ul>
+            </article>
+        </section>
+        <section class="main-section" id="Next13_New_Features">
+            <header><h1>Next13 New Featurs</h1>
+            </header>
+            <article>
+            <h3>The App Directory:</h3>
+            <p>The new router works in a new directory named <code>app</code></p>
+            <p>The <code>app</code> directory works alongside the <code>pages</code> directory to allow for incremental adoption.</p>
+            <p>
+                By default, components inside <code>app</code> are React Server Components. This is a performance optimization and allows you to easily adopt them. However, you can also use Client Components.
+            </p>
+            <h3>Component-level Client and Server Rendering</h3>
+            <p>
+                Next.js provided an easier way to break down your application into <code>pages</code> and prerender on the server by generating HTML and sending it to the client to be hydrated by React. 
+            </p>
+            <p>
+                Now, with Server and Client Components, React can render on the client and the server meaning you can choose the rendering environment at the component level.
+            </p>
+            <h3>Static and Dynamic Rendering on the Server</h3>
+            <p>
+                With Static Rendering, both Server and Client Components can be prerendered on the server at build time. The result of the work is cached and reused on subsequent requests. The cached result can also be revalidated.
+            </p>
+            <p>
+                With Dynamic Rendering, both Server and Client Components are rendered on the server at request time. The result of the work is not cached.
+            </p>
+            <h3>Styling</h3>
+            <ul>
+                <li>
+                    <h4>CSS modules</h4>
+                    <p>Next.js has built-in support for CSS Modules using the <code>.module.css</code> extension</p>
+                </li>
+                <li>
+                    <h4>TailwindCSS</h4>
+                    <p><a href="https://tailwindcss.com/">Tailwind CSS</a>  is a utility-first CSS framework that works exceptionally well with Next.js.</p>
+                </li>
+                <li>
+                    <h4>Global Style</h4>
+                    <p>Global styles can be imported into any layout, page, or component inside the app directory.</p>
+                </li>
+                <li>Something should be here</li>
+                <li>Something should be here</li>
+            </ul>
+        </article>
+        </section>
+        <section class="main-section" id="Fake_Topic">
+            <header><h1>Fake Topic</h1></header>
+            <article>
+                <p><code>some code is here</code></p>
+                <p><code>some code is here</code></p>
+                <p><code>some code is here</code></p>
+                <p><code>some code is here</code></p>
+                <p><code>some code is here</code></p>
+                <p><code>some code is here</code></p>
+                <p><code>some code is here</code></p>
+                <p><code>some code is here</code></p>
+                <p><code>some code is here</code></p>
+                <p><code>some code is here</code></p>
+                <ul>
+                    <li>something should be here</li>
+                    <li>something should be here</li>
+                    <li>something should be here</li>
+                    <li>something should be here</li>
+                    <li>something should be here</li>
+                </ul>
+            </article>
+        </section>
+        
+        </div>
+    </div>
+    </main>
+    
+</body>
+</html>
